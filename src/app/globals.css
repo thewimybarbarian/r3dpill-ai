@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --color-pill-red: #e11d48;
+  --color-pill-red-dark: #9f1239;
+  --color-pill-red-light: #fb7185;
+  --color-pill-red-glow: #ff2d55;
+  --color-pill-crimson: #dc143c;
+  --color-cyber-black: #0a0a0a;
+  --color-cyber-dark: #111111;
+  --color-cyber-surface: #1a1a1a;
+  --color-cyber-border: #2a2a2a;
+  --color-cyber-muted: #888888;
+  --color-cyber-text: #f0f0f0;
+
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+}
+
+/* Cyberpunk glow utilities */
+@layer base {
+  body {
+    background-color: var(--color-cyber-black);
+    color: var(--color-cyber-text);
+  }
+
+  ::selection {
+    background-color: var(--color-pill-red);
+    color: white;
+  }
+}
+
+@layer utilities {
+  .glow-red {
+    box-shadow: 0 0 15px rgba(225, 29, 72, 0.5), 0 0 60px rgba(225, 29, 72, 0.15);
+  }
+  .glow-red-sm {
+    box-shadow: 0 0 8px rgba(225, 29, 72, 0.4);
+  }
+  .text-glow {
+    text-shadow: 0 0 10px rgba(225, 29, 72, 0.6), 0 0 40px rgba(225, 29, 72, 0.2);
+  }
+  .border-glow {
+    border-color: var(--color-pill-red);
+    box-shadow: 0 0 8px rgba(225, 29, 72, 0.3), inset 0 0 8px rgba(225, 29, 72, 0.05);
+  }
+  .cyber-grid {
+    background-image:
+      linear-gradient(rgba(225, 29, 72, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(225, 29, 72, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .scanline {
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.08) 2px,
+      rgba(0, 0, 0, 0.08) 4px
+    );
+    pointer-events: none;
+  }
+}
